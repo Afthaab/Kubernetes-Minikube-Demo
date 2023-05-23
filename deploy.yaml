@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: simplego
+
+  labels:
+
+    app: simplego
+
+spec:
+
+  replicas: 1
+
+  selector:
+
+    matchLabels:
+
+      app: nginx
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: nginx
+
+    spec:
+
+      containers:
+
+      - name: simple
+
+        image: afthab2015/simple:1
+
+        ports:
+
+        - containerPort: 8080
